@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+
+    <diskStore path="java.io.tmpdir"/>
+    
+    <defaultCache
+            maxElementsInMemory="1000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="180"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            />
+            
+	<cache name="mainCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="120"
+        timeToLiveSeconds="180">
+	</cache>
+	
+	<cache name="doubanMovieCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="170000"
+        timeToLiveSeconds="172800"><!-- 2天 -->
+	</cache>
+	
+	<cache name="downloadMovieCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="400000"
+        timeToLiveSeconds="432000"><!-- 5天 -->
+	</cache>
+	
+	<cache name="emotionCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="9000000"
+        timeToLiveSeconds="1000000"><!-- 10天以上 -->
+	</cache>
+	
+	<cache name="weatherCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="3500"
+        timeToLiveSeconds="3600"><!-- 1个小时 -->
+	</cache>
+	
+	<cache name="videoVipCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="1700"
+        timeToLiveSeconds="1800"><!-- 30分钟 -->
+	</cache>
+	
+	<cache name="busCache" 
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="2590000"
+        timeToLiveSeconds="2592000"><!-- 30天左右-->
+	</cache>
+	
+	<cache name="vpnCache"
+		maxElementsInMemory="2000"
+		timeToIdleSeconds="500"
+        timeToLiveSeconds="600"><!-- 30分钟 -->
+	</cache>
+
+</ehcache>
+   
